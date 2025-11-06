@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Tasks App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="title">Taskflow</h1>
+
+    <!-- Input Section -->
+    <div class="input-area">
+
+      <input type="text" id="taskInput" placeholder="Enter your task...">
+
+      <select id="categorySelect">
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+
+      <!-- Floating Due Date Label -->
+      <div class="date-wrapper">
+        <input type="datetime-local" id="dateInput" required>
+        <label for="dateInput">Due Date</label>
+      </div>
+
+      <button onclick="addTask()">Add</button>
+
+    </div>
+
+    <!-- Task List -->
+    <ul class="task-list"></ul>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
