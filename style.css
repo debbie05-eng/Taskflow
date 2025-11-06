@@ -1,0 +1,180 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  width: 95%;
+  max-width: 480px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.input-area input,
+.input-area select,
+.input-area button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.input-area input,
+.input-area select {
+  background: #f9f9f9;
+}
+
+.input-area button {
+  background: #ff7799;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-area button:hover {
+  background: #ff3e72;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff6f9;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.category {
+  font-size: 13px;
+  background: #ffe2ea;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+.countdown {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.complete-btn, .delete-btn {
+  border: none;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.complete-btn { background: #c8ffce; }
+.delete-btn { background: #ffd1d1; }
+
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.date-wrapper {
+  position: relative;
+}
+
+.date-wrapper input {
+  width: 100%;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.date-wrapper label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+
+/* Move label up when input is active or filled */
+.date-wrapper input:focus + label,
+.date-wrapper input:not(:placeholder-shown) + label,
+.date-wrapper input:valid + label {
+  top: -6px;
+  font-size: 14px;
+  color: #1A1A1A;
+  opacity: 1;
+}
+.theme-toggle {
+  text-align: right;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* LIGHT THEME (default) */
+body {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #222;
+}
+
+/* DARK THEME */
+body.dark {
+  background: #1A1A1A;
+  color: #f7f7f7;
+}
+
+/* Dark Input */
+body.dark .input-area input,
+body.dark .input-area select,
+body.dark .date-wrapper input {
+  background: #333;
+  color: #fff;
+}
+
+/* Dark Task Card */
+body.dark .task-list li {
+  background: #2a2a2a;
+}
+
+/* Dark Floating Label */
+body.dark .date-wrapper label {
+  background: #1A1A1A;
+  color: #ddd;
+}
